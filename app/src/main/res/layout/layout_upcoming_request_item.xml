@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/fragment_medium_margin"
+    android:background="@drawable/drawable_color_white_rounded_corners_solid"
+    android:elevation="4dp"
+    android:id="@+id/clItemView"
+    android:outlineSpotShadowColor="@color/colorEditTextStroke"
+    android:paddingHorizontal="@dimen/fragment_medium_margin"
+    android:paddingVertical="@dimen/fragment_item_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingIdLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_booking_id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCancelBooking"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvCancelBooking" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingId"
+        style="@style/StyleSemiBold"
+        android:text="GHS69J420"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBookingIdLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvBookingIdLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvBookingIdLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCancelBooking"
+        style="@style/StyleBold"
+        android:text="$50/hr"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/sdvImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_service_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingIdLabel"
+        app:riv_corner_radius="@dimen/rounded_corner_radius" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"
+        app:layout_constraintBottom_toTopOf="@+id/tvService"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@+id/sdvImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvService"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:paddingVertical="@dimen/small_spacing"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:text="12 September, 24 (9:00am)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintTop_toBottomOf="@+id/tvService"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvImage"
+        app:layout_constraintEnd_toEndOf="@+id/tvService"
+        app:layout_constraintStart_toStartOf="@+id/tvService" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

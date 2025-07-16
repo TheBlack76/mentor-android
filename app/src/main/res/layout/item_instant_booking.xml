@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/clItemView"
+    android:background="@drawable/ic_round_gradient_view"
+    android:padding="@dimen/fragment_medium_margin"
+    android:visibility="visible"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_instant"
+        android:alpha="0.7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        style="@style/StyleBold"
+        android:text="@string/st_need_help_nget_connected_instantly"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTagline"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:text="@string/st_service_at_your_door_fast_in_30_seconds"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/ivLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+        android:backgroundTint="@color/colorRed"
+        android:fontFamily="@font/font_roboto_semibold"
+        android:minWidth="0dp"
+        android:textAllCaps="false"
+        android:paddingHorizontal="@dimen/fragment_medium_margin"
+        android:text="@string/st_register_now"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTagline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

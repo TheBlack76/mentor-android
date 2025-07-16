@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_top_round_corners"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:clipToPadding="false">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvConfirmBooking"
+        style="@style/StyleMedium"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/st_issue_resolved"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTagline"
+        style="@style/StyleRegular"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="0dp"
+        android:text="@string/st_are_you_satisfied_with_the_service_is_your_issue_resolved_please_let_us_know"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmBooking" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_close_white"
+        android:tint="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmBooking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmBooking" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbResolved"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/body_margin"
+        android:button="@drawable/drawable_checkbox_selector"
+        android:buttonTint="@null"
+        android:checked="true"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingVertical="@dimen/fragment_small_margin"
+        android:gravity="start|center"
+        android:textDirection="ltr"
+        android:layoutDirection="rtl"
+        android:text="@string/st_yes_it_s_resolved"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/tvTagline"
+        app:layout_constraintEnd_toEndOf="@+id/tvTagline"
+        app:layout_constraintTop_toBottomOf="@+id/tvTagline" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbServiceProviderNotJoin"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:button="@drawable/drawable_checkbox_selector"
+        android:buttonTint="@null"
+        android:checked="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingVertical="@dimen/fragment_small_margin"
+        android:gravity="start|center"
+        android:textDirection="ltr"
+        android:layoutDirection="rtl"
+        android:text="@string/st_professional_did_not_join_the_call"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/tvTagline"
+        app:layout_constraintEnd_toEndOf="@+id/tvTagline"
+        app:layout_constraintTop_toBottomOf="@+id/cbResolved" />
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbCustomerNotJoin"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:button="@drawable/drawable_checkbox_selector"
+        android:buttonTint="@null"
+        android:checked="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingVertical="@dimen/fragment_small_margin"
+        android:gravity="start|center"
+        android:textDirection="ltr"
+        android:layoutDirection="rtl"
+        android:text="@string/st_customer_did_not_join_the_call"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/tvTagline"
+        app:layout_constraintEnd_toEndOf="@+id/tvTagline"
+        app:layout_constraintTop_toBottomOf="@+id/cbServiceProviderNotJoin" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cbOther"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:button="@drawable/drawable_checkbox_selector"
+        android:buttonTint="@null"
+        android:checked="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingVertical="@dimen/fragment_small_margin"
+        android:gravity="start|center"
+        android:textDirection="ltr"
+        android:layoutDirection="rtl"
+        android:text="Other issue"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/tvTagline"
+        app:layout_constraintEnd_toEndOf="@+id/tvTagline"
+        app:layout_constraintTop_toBottomOf="@+id/cbCustomerNotJoin" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etOther"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:lines="4"
+        android:gravity="top"
+        android:visibility="gone"
+        android:paddingVertical="@dimen/fragment_medium_margin"
+        android:imeOptions="actionDone"
+        android:hint="Other comments you want to tell..."
+        android:layout_marginTop="@dimen/fragment_default_margin"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbOther" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_vertical_margin"
+        android:layout_marginBottom="@dimen/header_margin"
+        android:text="@string/st_submit"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etOther" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

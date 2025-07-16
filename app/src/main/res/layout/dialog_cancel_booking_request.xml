@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:background="@drawable/drawable_color_white_rounded_corners_solid"
+        android:padding="@dimen/body_margin"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/line_spacing_extra"
+            android:src="@drawable/ic_primary_cross"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fragment_menu_item_margin"
+            android:src="@drawable/ic_red_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCancel" />
+
+        <TextView
+            android:id="@+id/tvCancelBooking"
+            style="@style/StyleBold"
+            android:layout_marginTop="@dimen/fragment_menu_item_margin"
+            android:text="@string/st_cancel_booking"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+        <TextView
+            android:id="@+id/tvTagline"
+            style="@style/StyleRegular"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/body_margin"
+            android:gravity="center"
+            android:text="@string/st_are_you_sure_you_want_to_cancel_your_booking_request"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorEditTextStroke"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCancelBooking" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmit"
+            style="@style/StyleSubmitButton"
+            android:layout_marginTop="@dimen/body_margin"
+            android:backgroundTint="@color/colorRed"
+            android:elevation="8dp"
+            android:outlineSpotShadowColor="@color/colorRed"
+            android:text="@string/st_yes_cancel"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTagline" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvReschedule"
+            style="@style/StyleMedium"
+            android:layout_marginTop="@dimen/fragment_medium_margin"
+            android:gravity="center_vertical"
+            android:text="@string/st_no_continue"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSubmit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

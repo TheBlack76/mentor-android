@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="colorPrimary">#EBA840</color>
+    <color name="colorPrimaryDark">#EBA840</color>
+    <color name="colorAccent">#EBA840</color>
+
+    <color name="colorSecondary">#060047</color>
+    <color name="colorSecondaryTransparent">#4D060047</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorPrimaryText">#0B0F12</color>
+    <color name="colorSecondaryText">#1C1C1D</color>
+    <color name="colorTaglineText">#0B0E10</color>
+    <color name="colorPrimaryTransparent70">#B3EBA840</color>
+    <color name="colorSecondaryTextTransparent50">#801C1C1D</color>
+    <color name="colorSecondaryTextTransparent70">#B31C1C1D</color>
+    <color name="colorSecondaryTextTransparent10">#1A1C1C1D</color>
+    <color name="colorPrimaryText_70">#B31A1A1A</color>
+    <color name="colorDisableText">#991A1A1A</color>
+    <color name="colorDisabledText">#8C8C8C</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackTransparent_90">#E6000000</color>
+    <color name="colorBlackTransparent_70">#B3000000</color>
+    <color name="colorWhiteTransparent_10">#1AFFFFFF</color>
+    <color name="colorWhiteTransparent_30">#4DFFFFFF</color>
+    <color name="colorWhiteTransparent_50">#80FFFFFF</color>
+    <color name="colorWhiteTransparent_80">#CCFFFFFF</color>
+    <color name="colorLightButton">#F4F4F4</color>
+    <color name="colorLineColor">#303030</color>
+    <color name="colorBackgroundColor">#F5F5F5</color>
+    <color name="colorShadowColor">#1A000000</color>
+    <color name="colorShadowColor_5">#0D000000</color>
+    <color name="colorPrimaryTransparent10">#1AEBA840</color>
+    <color name="colorPrimaryPeach">#FFF2DD</color>
+    <color name="colorCoral">#F08080</color>
+    <color name="colorMossGreen">#ADDFAD</color>
+    <color name="colorToastSuccess">#6EA66E</color>
+    <color name="colorToastError">#C54444</color>
+    <color name="colorGreyTransparent30">#4D3B3B3B</color>
+    <color name="colorEditTextStroke">#808080</color>
+    <color name="colorButtonStroke">#C5C5C5</color>
+        <color name="colorLightGrey">#EFEFEF</color>
+
+    <color name="colorRed">#D82D2D</color>
+    <color name="colorRedDisable">#FFEAEA</color>
+    <color name="colorGreenDisable">#DFFFE3</color>
+    <color name="colorGreen">#0F9D22</color>
+
+    <color name="colorDisableGrey">#EBEAEA</color>
+    <color name="colorDivider">#DEDEDE</color>
+    <color name="colorGrayBg">#979797</color>
+
+    <color name="colorRecylerViewDivider">#EBEBEB</color>
+    <color name="colorPlaceHolder">#E9F5FF</color>
+
+    <color name="colorInputEditTextHint">#727784</color>
+    <color name="colorInputEditTextValue">#2C355B</color>
+    <color name="colorInputEditTextStroke">#1A000000</color>
+
+</resources>

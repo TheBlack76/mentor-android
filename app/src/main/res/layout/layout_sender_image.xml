@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/timeHeader"
+        layout="@layout/layout_time_header" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/sdvSenderImg"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="@dimen/fragment_default_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPlaceHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeHeader"
+        app:riv_corner_radius_bottom_left="16dp"
+        app:riv_corner_radius_top_left="16dp"
+        app:riv_corner_radius_top_right="16dp" />
+
+    <ProgressBar
+        android:id="@+id/pbImage"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="@dimen/vector_size"
+        android:layout_height="@dimen/vector_size"
+        android:indeterminateTint="@color/colorPrimary"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvSenderImg"
+        app:layout_constraintEnd_toEndOf="@+id/sdvSenderImg"
+        app:layout_constraintStart_toStartOf="@+id/sdvSenderImg"
+        app:layout_constraintTop_toTopOf="@+id/sdvSenderImg" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        style="@style/StyleRegular"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:gravity="center"
+        android:text="10:13"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintEnd_toEndOf="@+id/sdvSenderImg"
+        app:layout_constraintTop_toBottomOf="@+id/sdvSenderImg" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

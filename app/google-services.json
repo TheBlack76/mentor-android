@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "3008466424",
+    "project_id": "mentor-9399d",
+    "storage_bucket": "mentor-9399d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3008466424:android:063ae86356929302fa1a0d",
+        "android_client_info": {
+          "package_name": "com.mentor.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3008466424-m91sknecv1sjuf380uclqefgi4blodb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mentor.application",
+            "certificate_hash": "d948ed3b3bd762a16f52746561d82a43c6a9b87b"
+          }
+        },
+        {
+          "client_id": "3008466424-qen47faednfs5baclaf6hu0m4muc6f8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8lj338SNV1CnoUEq7D_S5h3tV_O6kXK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3008466424-qen47faednfs5baclaf6hu0m4muc6f8d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "3008466424-hmojff68cam11mkvtc569pvqvpej7gtv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.stillthinking.mentor"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

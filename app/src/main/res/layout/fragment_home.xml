@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dahboard_bg"
+        android:translationY="-36dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvUserImg"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:roundAsCircle="true"
+        app:placeholderImage="@drawable/ic_user_placeholder"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+       style="@style/StyleBold"
+        android:id="@+id/tvUserName"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toEndOf="@+id/sdvUserImg"
+        app:layout_constraintEnd_toStartOf="@+id/ivNotification"
+        android:layout_marginHorizontal="@dimen/fragment_small_margin"
+        app:layout_constraintTop_toTopOf="@+id/sdvUserImg"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/colorPrimaryText"
+        android:text="@string/st_guest_user"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location_marker"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        app:layout_constraintStart_toStartOf="@+id/tvUserName"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/StyleRegular"
+        android:id="@+id/tvLocation"
+        android:layout_width="0dp"
+        app:drawableEndCompat="@drawable/ic_down_arrow"
+        app:layout_constraintStart_toEndOf="@+id/ivLocation"
+        app:layout_constraintTop_toTopOf="@+id/ivLocation"
+        app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
+        android:drawableTint="@color/colorPrimaryText"
+        android:drawablePadding="@dimen/line_spacing_extra"
+        android:maxLength="25"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        android:text="@string/st_select_your_location"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sdvUserImg"
+        android:background="@drawable/drawable_color_white_rounded_corners_solid"
+        android:src="@drawable/ic_well_icon"
+        android:scaleType="centerInside"
+        android:elevation="2dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/sdvUserImg"/>
+
+
+    <TextView
+        android:id="@+id/tvNotificationCount"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:elevation="4dp"
+        android:visibility="gone"
+        android:translationY="15dp"
+        android:translationX="-15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:backgroundTint="@color/colorRed"
+        app:layout_constraintBottom_toTopOf="@+id/ivNotification"
+        app:layout_constraintTop_toTopOf="@+id/ivNotification"
+        app:layout_constraintEnd_toEndOf="@+id/ivNotification"
+        app:layout_constraintStart_toEndOf="@+id/ivNotification"
+        android:background="@drawable/background_color_circle_selector"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_edittext_height"
+        android:id="@+id/etSearch"
+        android:hint="@string/st_search"
+        android:singleLine="true"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:textColorHint="@color/colorPrimaryText"
+        android:drawableStart="@drawable/ic_search"
+        android:paddingHorizontal="@dimen/body_margin"
+        android:elevation="@dimen/card_elevation"
+        android:imeOptions="actionDone"
+        android:outlineSpotShadowColor="@color/black"
+        android:background="@drawable/drawable_search_bar"
+        app:layout_constraintStart_toStartOf="@+id/sdvUserImg"
+        app:layout_constraintEnd_toEndOf="@+id/ivNotification"
+        android:layout_marginTop="@dimen/fragment_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/sdvUserImg"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

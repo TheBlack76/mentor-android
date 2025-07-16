@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBlack"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.mentor.application.views.comman.utils.frescozoomabledraweeview.zoomable.ZoomableDraweeView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/zdvImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:actualImageScaleType="fitCenter"
+        app:fadeDuration="300"
+        app:placeholderImage="@drawable/ic_image_placeholder" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:ad_marker_color="@color/colorWhite"
+        app:played_ad_marker_color="@color/colorWhite"
+        app:played_color="@color/colorWhite"
+        app:unplayed_color="@color/white"
+        app:buffered_color="@color/white"
+        app:show_buffering="always"
+        app:controller_layout_id="@layout/layout_exoplayer_control_view"
+        app:use_controller="true"
+        app:auto_show="false"/>
+
+</FrameLayout>

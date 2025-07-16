@@ -1,0 +1,26 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Add your desired background styling -->
+    <item>
+        <shape>
+            <solid android:color="@color/colorTransparent" />
+            <stroke
+                android:width="0.6dp"
+                android:color="@color/colorEditTextStroke" />
+
+            <corners android:radius="8dp" />
+            <padding
+                android:left="16dp"
+                android:right="16dp" />
+        </shape>
+    </item>
+
+    <!-- Arrow Icon Positioned on the Right Side -->
+    <item
+        android:gravity="right|center_vertical"
+      >
+        <bitmap
+            android:gravity="center_vertical|end"
+            android:src="@drawable/ic_spinner_arrow"
+            android:tileMode="disabled" />
+    </item>
+</layer-list>

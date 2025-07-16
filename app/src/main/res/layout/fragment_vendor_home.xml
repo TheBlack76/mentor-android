@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dahboard_bg"
+        android:translationY="-36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvUserImage"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:placeholderImage="@drawable/ic_user_placeholder"
+        app:roundAsCircle="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/fragment_small_margin"
+        android:text="Welcome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toStartOf="@+id/ivNotification"
+        app:layout_constraintStart_toEndOf="@+id/sdvUserImage"
+        app:layout_constraintTop_toTopOf="@+id/sdvUserImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserName"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:text="Chris James"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvNotificationCount"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:elevation="4dp"
+        android:visibility="gone"
+        android:translationY="15dp"
+        android:translationX="-15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:backgroundTint="@color/colorRed"
+        app:layout_constraintBottom_toTopOf="@+id/ivNotification"
+        app:layout_constraintTop_toTopOf="@+id/ivNotification"
+        app:layout_constraintEnd_toEndOf="@+id/ivNotification"
+        app:layout_constraintStart_toEndOf="@+id/ivNotification"
+        android:background="@drawable/background_color_circle_selector"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNotification"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:background="@drawable/drawable_color_white_rounded_corners_solid"
+        android:elevation="2dp"
+        android:outlineSpotShadowColor="@color/colorPrimary"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_well_icon"
+        app:layout_constraintBottom_toBottomOf="@id/sdvUserImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/sdvUserImage" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNew"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_tab_height"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_tab_height"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:backgroundTint="@color/colorPrimaryPeach"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_new_request"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnUpcoming"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivNotification"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpcoming"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_tab_height"
+        android:layout_marginStart="@dimen/small_spacing"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/font_roboto_regular"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_upcoming"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPast"
+        app:layout_constraintStart_toEndOf="@+id/btnNew"
+        app:layout_constraintTop_toTopOf="@+id/btnNew"
+        app:strokeColor="@color/colorPrimaryText"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPast"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_tab_height"
+        android:layout_marginStart="@dimen/small_spacing"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/font_roboto_regular"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_past"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnUpcoming"
+        app:layout_constraintTop_toTopOf="@+id/btnUpcoming"
+        app:strokeColor="@color/colorPrimaryText"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fragment_default_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpcoming" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivNotification">
+
+        <include
+            android:id="@+id/accountDetail"
+            layout="@layout/layout_account_detail_satus"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

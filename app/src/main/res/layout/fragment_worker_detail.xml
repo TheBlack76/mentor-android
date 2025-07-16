@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryPeach"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/fragment_medium_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:tint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdvUserImage"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivBack"
+            app:placeholderImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/ic_image_square_placeholder"
+            app:roundedCornerRadius="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/StyleBold"
+            android:layout_marginStart="@dimen/fragment_item_margin"
+            android:drawableEnd="@drawable/ic_verified"
+            android:drawablePadding="@dimen/line_spacing_extra"
+            android:text="John Wills"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toEndOf="@+id/sdvUserImage"
+            app:layout_constraintTop_toTopOf="@+id/sdvUserImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfession"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/line_spacing_extra"
+            android:lines="2"
+            android:text="Plumber "
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/line_spacing_extra"
+            android:text="3yrs Experience"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorEditTextStroke"
+            app:layout_constraintStart_toStartOf="@+id/tvProfession"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfession" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv30MinPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fragment_medium_margin"
+            android:text="$24/30min"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintStart_toStartOf="@+id/sdvUserImage"
+            app:layout_constraintTop_toBottomOf="@+id/sdvUserImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv60MinPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/line_spacing_extra"
+            android:text="$100/60min"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintBottom_toBottomOf="@+id/tv30MinPrice"
+            app:layout_constraintStart_toEndOf="@+id/tv30MinPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv30MinPrice" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv90MinPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/line_spacing_extra"
+            android:text="$150/60min"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintBottom_toBottomOf="@+id/tv60MinPrice"
+            app:layout_constraintStart_toEndOf="@+id/tv60MinPrice"
+            app:layout_constraintTop_toTopOf="@+id/tv60MinPrice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="120dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAboutLabel"
+                style="@style/StyleBold"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/fragment_default_margin"
+                android:text="About Christan"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintBottom_toBottomOf="@id/tvRating"
+                app:layout_constraintEnd_toStartOf="@+id/tvRating"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvRating" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRating"
+                style="@style/StyleMedium"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:background="@drawable/drawable_color_accent_rounded_corners_solid"
+                android:backgroundTint="@color/colorLightGrey"
+                android:drawableStart="@drawable/ic_star"
+                android:drawablePadding="@dimen/line_spacing_extra"
+                android:paddingHorizontal="@dimen/small_spacing"
+                android:paddingVertical="@dimen/line_spacing_extra"
+                android:text="4.0 Rating"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAbout"
+                style="@style/StyleRegular"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_medium_margin"
+                android:text="From fixing leaks and unclogging drains to installing new fixtures and systems, I’m dedicated to providing reliable, high-quality work. My goal is to ensure your plumbing runs smoothly."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorEditTextStroke"
+                app:layout_constraintEnd_toEndOf="@id/tvRating"
+                app:layout_constraintStart_toStartOf="@+id/tvAboutLabel"
+                app:layout_constraintTop_toBottomOf="@+id/tvRating" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCertificate"
+                style="@style/StyleBold"
+                android:layout_marginTop="@dimen/body_margin"
+                android:text="@string/st_certifications_license"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintStart_toStartOf="@id/tvAbout"
+                app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCertificate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/fragment_item_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvCertificate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPreviousWork"
+                style="@style/StyleBold"
+                android:layout_marginTop="@dimen/body_margin"
+                android:text="@string/st_previous_work"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintStart_toStartOf="@id/tvAbout"
+                app:layout_constraintTop_toBottomOf="@+id/rvCertificate" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPreviousWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/fragment_item_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvPreviousWork" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReviews"
+                style="@style/StyleBold"
+                android:layout_marginTop="@dimen/body_margin"
+                android:text="@string/st_reviews_from_clients"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintStart_toStartOf="@id/tvAbout"
+                app:layout_constraintTop_toBottomOf="@+id/rvPreviousWork" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReviewsViewAll"
+                style="@style/StyleBold"
+                android:paddingHorizontal="@dimen/activity_horizontal_margin"
+                android:paddingVertical="@dimen/line_spacing_extra"
+                android:text="@string/st_view_all"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/tvReviews"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvReviews" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvReviews" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#CCFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnScheduleBooking"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/st_schedule_booking"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnInstantBooking"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnInstantBooking"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/fragment_medium_margin"
+        android:text="@string/st_book_instant"
+        android:visibility="gone"
+        android:background="@drawable/drawable_round_stroke_button"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent" />
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

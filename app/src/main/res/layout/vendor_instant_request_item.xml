@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#E6EBA840"
+    android:elevation="4dp"
+    android:outlineSpotShadowColor="@color/colorPrimary"
+    android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginVertical="@dimen/small_spacing"
+    android:paddingVertical="@dimen/fragment_medium_margin"
+    android:paddingHorizontal="@dimen/body_margin">
+
+    <TextView
+        style="@style/StyleBold"
+        android:id="@+id/tvPrice"
+        android:text="$500"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        style="@style/StyleRegular"
+        android:id="@+id/tvDuration"
+        android:text="Duration: 30 min"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvImage"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        app:placeholderImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_square_placeholder2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDuration"
+        app:roundedCornerRadius="@dimen/small_corner_radious"
+        android:layout_marginTop="@dimen/fragment_medium_margin"/>
+
+    <TextView
+        style="@style/StyleSemiBold"
+        android:id="@+id/tvName"
+        android:text="Alvert"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/sdvImage"
+        app:layout_constraintBottom_toTopOf="@+id/tvRatting"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"/>
+
+    <TextView
+        style="@style/StyleRegular"
+        android:id="@+id/tvRatting"
+        android:text="4.7"
+        android:drawableStart="@drawable/ic_star"
+        android:drawableTint="@color/colorBlack"
+        android:drawablePadding="@dimen/line_spacing_extra"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvImage"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReject"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_default_margin"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_reject"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+        app:layout_constraintStart_toStartOf="@+id/sdvImage"
+        app:layout_constraintTop_toBottomOf="@+id/sdvImage"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAccept"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginStart="@dimen/small_spacing"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_accept"
+        android:backgroundTint="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimary"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReject"
+        app:layout_constraintTop_toTopOf="@+id/btnReject" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

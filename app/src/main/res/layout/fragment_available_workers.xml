@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/toolbar"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/StyleBold"
+        android:id="@+id/tvAvailableWorkers"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/st_available_worker_s"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFilterBy"
+        style="@style/StyleMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/st_filter_by"
+        android:background="@drawable/drawable_color_full_rounded_corners_solid"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:paddingVertical="@dimen/small_spacing"
+        android:drawableEnd="@drawable/ic_down_arrow_solid"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:paddingHorizontal="@dimen/fragment_item_margin"
+        app:layout_constraintTop_toTopOf="@+id/tvAvailableWorkers"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAvailableWorkers"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/fragment_subhead_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvAvailableWorkers">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="8dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <TextView
+        android:id="@+id/tvNoData"
+        style="@style/StyleTextViewNoData"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

@@ -1,0 +1,98 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        kotlinVersion = '1.9.0'
+        gradleVersion = '8.6.0'
+        googleServicesVersion = "4.4.1"
+        navVersion = '2.5.2'
+        ananlytics = "2.9.2"
+        daggreHilt = '2.51.1'
+    }
+
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "com.google.gms:google-services:$googleServicesVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:3.0.4"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$daggreHilt"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+ext {
+    configuration = [
+            packageName      : "com.mentor.application",
+            compileSdkVersion: 35,
+            targetSdkVersion : 35,
+            minSdkVersion    : 28,
+            buildToolsVersion: "27.0.3",
+            versionCode      : 15,
+            versionName      : "2.2"
+    ]
+
+    dependencies = [
+            jUnit                 : "4.13.2",
+            testRunner            : "1.6.2",
+            testEspresso          : "3.6.1",
+            architectureComponents: '2.8.6',
+            appCompat             : '1.7.0',
+            constraintLayout      : '2.1.4',
+            googleAndroidMaterial : '1.12.0',
+            recylerView           : '1.3.2',
+            cardView              : '1.0.0',
+            androidCoreKTX        : '1.13.1',
+            androidXFragmentKTX   : "1.8.3",
+            retrofit              : '2.9.0',
+            retrofitAdapter       : "2.3.0",
+            rxJava                : "2.2.9",
+            rxAndroid             : "2.1.0",
+            okHttpLoginInterceptor: '4.12.0',
+            osmDroid              : "6.0.3",
+            osmBonusPack          : "6.5.3",
+            signaturePad          : "1.2.1",
+            uCrop                 : "2.2.3",
+            fresco                : "2.6.0",
+            facebookLoginSDK      : '13.0.0',
+            googlePlusLoginSDK    : '21.2.0',
+            googleLocationServices: "16.0.0",
+            firebaseAnalytics     : '22.1.0',
+            firebaseMessaging     : '24.0.1',
+            googlePlaces          : "4.0.0",
+            workManager           : "1.0.1",
+            socketIO              : "2.0.0",
+            navigationVersion     : "2.8.1",
+            otpView               : "v1.1.2-ktx",
+            flexBoxLayout         : "1.1.1",
+            awsVersion            : "2.26.0",
+            crashlytics           : "19.1.0",
+            analytics             : "20.1.2",
+            securityCrypto        : "1.1.0-alpha06",
+            hiltLyfeCycle         : "1.0.0-alpha03",
+            daggerHilt            : "2.51.1",
+            glide                 : "4.16.0"
+    ]
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

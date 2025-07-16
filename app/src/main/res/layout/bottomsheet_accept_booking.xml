@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_top_round_corners"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/bottomSheetLayout"
+    android:clipToPadding="false">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvConfirmBooking"
+        style="@style/StyleMedium"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/st_confirm_booking"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:padding="@dimen/line_spacing_extra"
+        android:src="@drawable/ic_close_white"
+        android:tint="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmBooking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmBooking" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"
+        android:text="@string/st_fare"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmBooking" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etName"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:inputType="numberDecimal"
+        android:hint="Enter your price"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPlatform"
+        style="@style/StyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/body_margin"
+        android:gravity="center_vertical"
+        android:text="Platform fee"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPlatformFees"
+        style="@style/StyleMedium"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="$--"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorRed"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlatform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPlatform" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTotalAmount"
+        style="@style/StyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/body_margin"
+        android:gravity="center_vertical"
+        android:text="Final price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/etName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlatform" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/StyleMedium"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="$--"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalAmount" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"
+        android:layout_marginBottom="@dimen/header_margin"
+        android:text="@string/st_accept"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalAmount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

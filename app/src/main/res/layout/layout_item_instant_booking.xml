@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clItemView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/fragment_medium_margin"
+    android:background="@drawable/drawable_color_white_rounded_corners_solid"
+    android:backgroundTint="#E6EBA840"
+    android:outlineSpotShadowColor="@color/colorEditTextStroke"
+    android:paddingHorizontal="@dimen/fragment_medium_margin"
+    android:paddingBottom="@dimen/fragment_item_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingIdLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_booking_id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingId"
+        style="@style/StyleSemiBold"
+        android:text="GHS69J420"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBookingIdLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvBookingIdLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvBookingIdLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/StyleMedium"
+        android:text="$50/hr"
+        android:layout_marginTop="@dimen/fragment_medium_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingIdLabel"
+        app:placeholderImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_square_placeholder2"
+        app:roundedCornerRadius="@dimen/rounded_corner_radius" />
+
+    <ImageView
+        android:id="@+id/ivInstantBooking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:src="@drawable/ic_instant_booking"
+        app:layout_constraintBottom_toTopOf="@+id/tvName"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"
+        app:layout_constraintTop_toTopOf="@+id/sdvImage"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:paddingVertical="@dimen/small_spacing"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tvService"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"
+        app:layout_constraintTop_toBottomOf="@+id/ivInstantBooking"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvService"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvImage"
+        app:layout_constraintEnd_toStartOf="@+id/tvBookingStatus"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingStatus"
+        style="@style/StyleBold"
+        android:background="@drawable/drawable_color_accent_rounded_corners_solid"
+        android:backgroundTint="@color/colorGreenDisable"
+        android:paddingHorizontal="@dimen/fragment_small_margin"
+        android:paddingVertical="@dimen/small_spacing"
+        android:visibility="gone"
+        android:text="@string/st_completed"
+        android:textColor="@color/colorGreen"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvService"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReject"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_reject"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/acceptContainer"
+        app:layout_constraintStart_toStartOf="@+id/sdvImage"
+        app:layout_constraintTop_toBottomOf="@+id/sdvImage"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/acceptContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginStart="@dimen/small_spacing"
+        app:cardBackgroundColor="@color/colorWhiteTransparent_50"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReject"
+        app:layout_constraintTop_toTopOf="@+id/btnReject">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleY="20"
+            android:max="100"
+            android:progress="50"
+            android:visibility="visible"
+            android:progressTint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            android:progressBackgroundTint="@color/colorPrimaryPeach"/>
+
+        <TextView
+            android:id="@+id/buttonText"
+            style="@style/StyleMedium"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/st_accept"
+            android:textColor="@color/colorPrimary"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCustom"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_accept_with_custom_fare"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/acceptContainer"
+        app:layout_constraintStart_toStartOf="@+id/sdvImage"
+        app:layout_constraintTop_toBottomOf="@+id/btnReject"
+        app:strokeColor="@color/white"
+        app:strokeWidth="@dimen/stroke_width_small" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

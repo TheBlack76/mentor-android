@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <!-- Production -->
+
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">52.205.154.207:5000</domain>
+    </domain-config>
+
+<!--    &lt;!&ndash; Staging &ndash;&gt;-->
+<!--    <domain-config cleartextTrafficPermitted="false">-->
+<!--        <domain includeSubdomains="true">3.6.152.50:5000</domain>-->
+<!--    </domain-config>-->
+<!--    <base-config cleartextTrafficPermitted="true">-->
+<!--        <trust-anchors>-->
+<!--            <certificates src="system" />-->
+<!--        </trust-anchors>-->
+<!--    </base-config>-->
+
+</network-security-config>

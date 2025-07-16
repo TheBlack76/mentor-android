@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/body_margin"
+    android:background="@drawable/drawable_item_round_stroke"
+    android:paddingHorizontal="@dimen/fragment_medium_margin"
+    android:paddingVertical="@dimen/fragment_item_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:text="David Green"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        android:layout_marginEnd="@dimen/fragment_small_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/StyleRegular"
+        android:text="Aug 05, 2024"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/ratting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rating="4"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        android:text="This is the first time I’ve used this service. The work was very clean and very professionally done. Highly recomend! Great Guy."
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratting" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

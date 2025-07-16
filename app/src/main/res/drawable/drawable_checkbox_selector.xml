@@ -1,0 +1,8 @@
+<!-- res/drawable/custom_checkbox.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- State when the checkbox is checked -->
+    <item android:state_checked="true" android:drawable="@drawable/ic__checkbox" />
+
+    <!-- State when the checkbox is unchecked -->
+    <item android:state_checked="false" android:drawable="@drawable/ic_uncheckbox" />
+</selector>

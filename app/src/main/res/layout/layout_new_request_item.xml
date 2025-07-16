@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+    android:layout_marginBottom="@dimen/fragment_medium_margin"
+    android:background="@drawable/drawable_color_white_rounded_corners_solid"
+    android:elevation="4dp"
+    android:id="@+id/clItemView"
+    android:outlineSpotShadowColor="@color/colorEditTextStroke"
+    android:paddingHorizontal="@dimen/fragment_medium_margin"
+    android:paddingVertical="@dimen/fragment_item_margin">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingIdLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_booking_id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPrice" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingId"
+        style="@style/StyleSemiBold"
+        android:text="GHS69J420"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBookingIdLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvBookingIdLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvBookingIdLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/StyleMedium"
+        android:text="$50/hr"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:scaleType="centerCrop"
+        app:placeholderImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_square_placeholder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingIdLabel"
+        app:roundedCornerRadius="@dimen/rounded_corner_radius" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sdvImage"
+        app:layout_constraintBottom_toTopOf="@+id/tvService"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="@+id/sdvImage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvService"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:text="Drain Cleaning Service"
+        android:paddingVertical="@dimen/small_spacing"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintBottom_toTopOf="@+id/tvDate"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/tvName"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:singleLine="true"
+        android:text="12 September, 24 (9:00am)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintTop_toBottomOf="@+id/tvService"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvImage"
+        app:layout_constraintEnd_toStartOf="@+id/tvBookingStatus"
+        android:layout_marginEnd="@dimen/line_spacing_extra"
+        app:layout_constraintStart_toStartOf="@+id/tvService" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingStatus"
+        style="@style/StyleBold"
+        android:background="@drawable/drawable_color_accent_rounded_corners_solid"
+        android:backgroundTint="@color/colorGreenDisable"
+        android:paddingHorizontal="@dimen/fragment_small_margin"
+        android:paddingVertical="@dimen/small_spacing"
+        android:visibility="gone"
+        android:text="@string/st_completed"
+        android:textColor="@color/colorGreen"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDate"/>
+    
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReject"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/font_roboto_medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_reject"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnAccept"
+        app:layout_constraintStart_toStartOf="@+id/sdvImage"
+        app:layout_constraintTop_toBottomOf="@+id/sdvImage"
+        app:strokeColor="@color/colorPrimaryText"
+        app:strokeWidth="@dimen/stroke_width_small" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAccept"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fragment_vertical_margin"
+        android:layout_marginStart="@dimen/small_spacing"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/font_roboto_regular"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
+        android:text="@string/st_accept"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnReject"
+        app:layout_constraintTop_toTopOf="@+id/btnReject" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

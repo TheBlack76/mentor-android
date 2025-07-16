@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/drawable_item_round_stroke"
+    android:paddingVertical="@dimen/fragment_small_margin"
+    android:paddingHorizontal="@dimen/fragment_item_margin"
+    android:layout_marginBottom="@dimen/body_margin"
+    android:layout_marginHorizontal="@dimen/activity_horizontal_margin">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvVendorImage"
+        android:layout_width="@dimen/category_item_radius"
+        android:layout_height="@dimen/category_item_radius"
+        app:placeholderImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/ic_image_square_placeholder"
+        app:roundedCornerRadius="@dimen/rounded_corner_radius"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleMedium"
+        app:layout_constraintStart_toEndOf="@+id/sdvVendorImage"
+        app:layout_constraintTop_toTopOf="@+id/sdvVendorImage"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="John Wills"
+        app:layout_constraintBottom_toTopOf="@+id/tvTagline"
+        android:drawableEnd="@drawable/ic_verified"
+        android:drawablePadding="@dimen/line_spacing_extra"
+        android:layout_marginStart="@dimen/fragment_item_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTagline"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintBottom_toTopOf="@+id/tv30MinPrice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:text="Technician"
+        android:textColor="@color/colorEditTextStroke"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv30MinPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvTagline"
+        app:layout_constraintTop_toBottomOf="@+id/tvTagline"
+        app:layout_constraintBottom_toBottomOf="@+id/sdvVendorImage"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:text="$50/30min"
+        android:textColor="@color/colorPrimary"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv60MinPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv30MinPrice"
+        android:layout_marginStart="@dimen/line_spacing_extra"
+        app:layout_constraintTop_toTopOf="@+id/tv30MinPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tv30MinPrice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:text="$100/60min"
+        android:textColor="@color/colorPrimary"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv90MinPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv60MinPrice"
+        android:layout_marginStart="@dimen/line_spacing_extra"
+        app:layout_constraintTop_toTopOf="@+id/tv60MinPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tv60MinPrice"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:text="$150/60min"
+        android:textColor="@color/colorPrimary"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRatting"
+        style="@style/StyleMedium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="0.0"
+        android:drawableStart="@drawable/ic_star"
+        android:drawablePadding="@dimen/line_spacing_extra"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryText"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

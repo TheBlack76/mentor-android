@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryPeach"
+    android:layout_marginTop="@dimen/fragment_medium_margin"
+    android:paddingVertical="@dimen/fragment_medium_margin"
+    android:paddingHorizontal="@dimen/fragment_medium_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSelectTime"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:text="@string/st_select_time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStartTime"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:gravity="center_vertical"
+        android:hint="@string/st_start_time"
+        android:layout_marginEnd="@dimen/small_spacing"
+        app:drawableEndCompat="@drawable/ic_calender_inactive_tab"
+        app:drawableTint="@color/colorEditTextStroke"
+        app:layout_constraintEnd_toStartOf="@+id/tvEndTime"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectTime" />
+
+    <TextView
+        android:id="@+id/tvEndTime"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:gravity="center_vertical"
+        android:hint="@string/st_end_time"
+        android:layout_marginStart="@dimen/small_spacing"
+        android:paddingStart="@dimen/fragment_default_margin"
+        android:paddingEnd="@dimen/fragment_default_margin"
+        app:drawableEndCompat="@drawable/ic_calender_inactive_tab"
+        app:drawableTint="@color/colorEditTextStroke"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectTime"
+        app:layout_constraintStart_toEndOf="@+id/tvStartTime"
+        app:layout_constraintTop_toTopOf="@+id/tvStartTime" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDuration"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:text="@string/st_duration"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/small_spacing"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStartTime" />
+
+
+    <Spinner
+        android:id="@+id/spnrDuration"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_edittext_height"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:gravity="center_vertical"
+        android:hint="@string/st_select_date"
+        android:background="@drawable/drawable_spinner"
+        android:paddingHorizontal="@dimen/fragment_small_margin"
+        app:layout_constraintEnd_toEndOf="@+id/tvDuration"
+        app:layout_constraintStart_toStartOf="@+id/tvDuration"
+        app:layout_constraintTop_toBottomOf="@+id/tvDuration" />
+
+    <TextView
+        android:id="@+id/tvDurationValue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_edittext_height"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:gravity="center_vertical"
+        android:alpha="0"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/drawable_spinner"
+        android:paddingHorizontal="@dimen/fragment_default_margin"
+        app:layout_constraintEnd_toEndOf="@+id/tvDuration"
+        app:layout_constraintStart_toStartOf="@+id/tvDuration"
+        app:layout_constraintTop_toBottomOf="@+id/tvDuration" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSlots"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:text="@string/st_slots_generated"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectTime"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectTime"
+        app:layout_constraintTop_toBottomOf="@+id/spnrDuration" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSlots" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        style="@style/StyleSubmitButton"
+        android:layout_height="@dimen/header_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/st_cancel"
+        android:textColor="@color/colorPrimaryText"
+        android:background="@drawable/drawable_input_edittext_normal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/line_spacing_extra"
+        android:paddingVertical="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnGenerate"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGenerate"
+        style="@style/StyleSubmitButton"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/st_generate_slot"
+        android:layout_height="@dimen/header_margin"
+        android:textColor="@color/white"
+        android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginStart="@dimen/line_spacing_extra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancel"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

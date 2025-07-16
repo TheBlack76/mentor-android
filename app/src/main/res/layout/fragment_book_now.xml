@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDateLabel"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/st_when_would_you_like_your_service"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:gravity="center_vertical"
+        android:hint="@string/st_select_date"
+        app:drawableEndCompat="@drawable/ic_calender_inactive_tab"
+        app:drawableTint="@color/colorEditTextStroke"
+        app:layout_constraintEnd_toEndOf="@+id/tvDateLabel"
+        app:layout_constraintStart_toStartOf="@+id/tvDateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateLabel" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/fragment_medium_margin"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv30MinSlot"
+                style="@style/StyleSemiBold"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@string/st_30_minutes_slots"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv30Min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_default_margin"
+                android:layout_marginTop="@dimen/line_spacing_extra"
+                android:layout_marginEnd="@dimen/fragment_double_margin"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv30MinSlot"
+                app:spanCount="2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv60MinSlot"
+                style="@style/StyleSemiBold"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@string/st_60_minutes_slots"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv30Min" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv60Min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_default_margin"
+                android:layout_marginTop="@dimen/line_spacing_extra"
+                android:layout_marginEnd="@dimen/fragment_double_margin"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv60MinSlot"
+                app:spanCount="2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv90MinSlot"
+                style="@style/StyleSemiBold"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:text="@string/st_90_minutes_slots"
+                android:visibility="gone"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv60Min" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv90Min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fragment_default_margin"
+                android:layout_marginTop="@dimen/line_spacing_extra"
+                android:layout_marginEnd="@dimen/fragment_double_margin"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv90MinSlot"
+                app:spanCount="2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ivNoData"
+        style="@style/StyleRegular"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:drawableTop="@drawable/ic_calender_placeholder"
+        android:drawablePadding="@dimen/fragment_medium_margin"
+        android:gravity="center"
+        android:src="@drawable/ic_calender_placeholder"
+        android:text="@string/st_no_slots_added"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimaryText"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/fragment_double_margin"
+        android:layout_height="@dimen/fragment_double_margin"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loader_view"
+        app:lottie_speed="4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_medium_margin"
+        android:text="@string/st_continue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

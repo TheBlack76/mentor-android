@@ -1,0 +1,243 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-parcelize'
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+apply plugin: 'com.google.firebase.crashlytics'
+
+
+apply plugin: "com.google.dagger.hilt.android"
+
+
+def configuration = rootProject.ext.configuration
+def libraries = rootProject.ext.dependencies
+
+android {
+    namespace 'com.mentor.application'
+    defaultConfig {
+        applicationId configuration.packageName
+        minSdkVersion configuration.minSdkVersion
+        compileSdk configuration.compileSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+        versionCode configuration.versionCode
+        versionName configuration.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+
+        splits {
+            abi {
+                include 'x86', 'x86_64', 'arm64-v8a', 'armeabi-v7a'
+            }
+        }
+
+        // Load properties from local.properties file
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+//        // Set manifest placeholders for API keys
+//        manifestPlaceholders = [
+//                branchIoApiKey: "${properties.getProperty('BRANCH_IO_API_KEY')}"
+//        ]
+
+        buildConfigField 'String', 'COGNITO_POOL_ID', "\"" + properties.getProperty('COGNITO_POOL_ID') + "\""
+        buildConfigField 'String', 'STRIPE_TEST_KEY', "\"" + properties.getProperty('STRIPE_TEST_KEY') + "\""
+        buildConfigField 'String', 'STRIPE_LIVE_KEY', "\"" + properties.getProperty('STRIPE_LIVE_KEY') + "\""
+
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.security:security-crypto-ktx:${libraries.securityCrypto}"
+    testImplementation "junit:junit:${libraries.jUnit}"
+    androidTestImplementation "androidx.test:runner:${libraries.testRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${libraries.testEspresso}"
+
+    // Kotlin and support libraries
+    implementation "androidx.appcompat:appcompat:${libraries.appCompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${libraries.constraintLayout}"
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${libraries.architectureComponents}"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${libraries.architectureComponents}"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:${libraries.architectureComponents}"
+
+    // Core android KTX
+    implementation "androidx.core:core-ktx:${libraries.androidCoreKTX}"
+    implementation "androidx.fragment:fragment-ktx:${libraries.androidXFragmentKTX}"
+
+    // Android Support Design
+    implementation("com.google.android.material:material:${libraries.googleAndroidMaterial}") {
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
+    // RecyclerView
+    implementation("androidx.recyclerview:recyclerview:${libraries.recylerView}") {
+        exclude module: 'support-v4'
+    }
+
+    // Dagger hilt
+    implementation("com.google.dagger:hilt-android:${libraries.daggerHilt}")
+    kapt("com.google.dagger:hilt-android-compiler:${libraries.daggerHilt}")
+
+    // CardView
+    implementation("androidx.cardview:cardview:${libraries.cardView}") {
+        exclude module: 'support-v4'
+    }
+
+    // Fresco for Image Loading
+    implementation("com.facebook.fresco:fresco:${libraries.fresco}") {
+        exclude module: 'support-v4'
+    }
+
+    implementation("com.facebook.fresco:animated-gif:${libraries.fresco}") {
+        exclude module: 'support-v4'
+    }
+
+    implementation 'com.facebook.infer.annotation:infer-annotation:0.18.0'
+
+    implementation ("io.github.chochanaresh:filepicker:0.1.9")
+
+
+    // Facebook Login SDK
+    implementation "com.facebook.android:facebook-login:${libraries.facebookLoginSDK}"
+
+    // Retrofit for making Network Connections
+    implementation "com.squareup.retrofit2:retrofit:${libraries.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${libraries.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${libraries.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${libraries.okHttpLoginInterceptor}"
+
+    // RxJava and RxAndroid for reactive programming
+    implementation "io.reactivex.rxjava2:rxjava:${libraries.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${libraries.rxAndroid}"
+
+    // Socket.IO
+    implementation("io.socket:socket.io-client:${libraries.socketIO}") {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // GooglePlus Login SDK
+    implementation("com.google.android.gms:play-services-auth:${libraries.googlePlusLoginSDK}") {
+        exclude(group: 'com.android.support')
+    }
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:${libraries.navigationVersion}"
+    implementation "androidx.navigation:navigation-ui-ktx:${libraries.navigationVersion}"
+
+    // OTP View
+    implementation "com.github.aabhasr1:OtpView:${libraries.otpView}"
+
+    // AWS
+    implementation "com.amazonaws:aws-android-sdk-s3:${libraries.awsVersion}"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:${libraries.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${libraries.glide}"
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+
+    // Firebase
+    implementation "com.google.firebase:firebase-analytics:${libraries.firebaseAnalytics}"
+    implementation "com.google.firebase:firebase-messaging:${libraries.firebaseMessaging}"
+    implementation "com.google.android.libraries.places:places:${libraries.googlePlaces}"
+    implementation "com.google.firebase:firebase-crashlytics:${libraries.crashlytics}"
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-auth")
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    apply plugin: 'com.google.gms.google-services'
+
+    // Indicator
+    implementation("com.tbuonomo:dotsindicator:4.3")
+
+    // Material Design Dialogs
+    implementation 'com.afollestad.material-dialogs:core:0.9.5.0'
+
+    // CountryCode
+    implementation 'com.hbb20:ccp:2.7.0'
+
+    implementation 'com.intuit.sdp:sdp-android:1.1.1'
+
+    implementation 'com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0'
+
+    // Chrome custom tab
+    implementation 'androidx.browser:browser:1.5.0' // Use the latest version available
+
+    // Biometric
+    implementation("androidx.biometric:biometric:1.4.0-alpha02")
+
+     // Ratting bar
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+
+    // Lottie animation
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+    // Flex box
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    // Multi image picker
+    implementation 'com.github.AnilFurkanOkcun:UWMediaPicker-Android:1.3.3'
+
+    // Vonage video
+    implementation 'com.opentok.android:opentok-android-sdk:2.28.4'
+    implementation "pub.devrel:easypermissions:3.0.0"
+
+    // Stripe
+    implementation 'com.stripe:stripe-android:21.2.0'
+
+    // Exo player
+    implementation 'com.google.android.exoplayer:exoplayer:2.13.3'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.13.3'
+
+    // MultiDate selector
+    implementation 'com.github.shuwnyuantee:Material-Calendar-View:1.3'
+
+    // jsoup
+    implementation 'org.jsoup:jsoup:1.13.1'
+
+
+}

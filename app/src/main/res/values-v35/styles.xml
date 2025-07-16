@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewStyle</item>
+        <item name="android:textColorPrimary">@color/colorPrimaryText</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="popupMenuStyle">@style/StylePopupMenu</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+</resources>

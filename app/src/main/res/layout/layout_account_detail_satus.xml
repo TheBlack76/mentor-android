@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clGuestView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:visibility="gone"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_detail_hang_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/tvTitle"/>
+
+    <TextView
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:id="@+id/tvTitle"
+        android:text="@string/st_don_t_miss_out_complete_personalization_availability_and_account_to_receive_booking_requests"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivIcon"
+        android:gravity="center"
+        android:layout_marginVertical="@dimen/fragment_small_margin"
+        app:layout_constraintBottom_toTopOf="@+id/btnSettings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSettings"
+        style="@style/StyleSubmitButton"
+        android:layout_height="36dp"
+        android:text="@string/st_go_to_settings"
+        android:visibility="visible"
+        android:textColor="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/drawable_black_round_stroke"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

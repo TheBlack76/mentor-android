@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/fragment_item_margin">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdvServiceImage"
+        android:layout_width="132dp"
+        android:layout_height="72dp"
+        app:placeholderImage="@color/colorPlaceHolder"
+        app:roundedCornerRadius="@dimen/rounded_corner_radius"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/StyleRegular"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/small_spacing"
+        android:singleLine="true"
+        android:text="Computer Troubleshoo.."
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorTaglineText"
+        app:layout_constraintEnd_toEndOf="@+id/sdvServiceImage"
+        app:layout_constraintStart_toStartOf="@+id/sdvServiceImage"
+        app:layout_constraintTop_toBottomOf="@+id/sdvServiceImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

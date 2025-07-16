@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/fragment_medium_margin"
+    android:clickable="true">
+
+    <TextView
+        style="@style/StyleBold"
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/fragment_vertical_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:text="How would you like to Continue"
+        android:textColor="@color/colorPrimaryText"/>
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCustomer"
+        android:layout_width="0dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="@+id/tvHeader"
+        app:layout_constraintEnd_toEndOf="@+id/tvHeader"
+        android:background="@drawable/ic_professional"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cbCustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_checkmark"
+        android:layout_margin="@dimen/fragment_default_margin"
+        app:layout_constraintTop_toTopOf="@+id/ivCustomer"
+        app:layout_constraintEnd_toEndOf="@+id/ivCustomer"/>
+
+    <TextView
+        style="@style/StyleRegular"
+        android:id="@+id/tvCustomer"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        app:layout_constraintTop_toBottomOf="@+id/ivCustomer"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="@string/st_as_a_customer"
+        android:textColor="@color/colorPrimaryText"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProfessional"
+        android:layout_width="0dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="@dimen/fragment_subhead_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvCustomer"
+        app:layout_constraintStart_toStartOf="@+id/tvCustomer"
+        app:layout_constraintEnd_toEndOf="@+id/tvCustomer"
+        android:background="@drawable/ic_customer"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cbProfessional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_un_checkmark"
+        android:layout_margin="@dimen/fragment_default_margin"
+        app:layout_constraintTop_toTopOf="@+id/ivProfessional"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfessional"/>
+
+    <TextView
+        style="@style/StyleRegular"
+        android:id="@+id/tvProfessional"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/fragment_small_margin"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfessional"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="@string/st_as_a_professional"
+        android:textColor="@color/colorPrimaryText"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:text="@string/st_continue"
+        android:textColor="@color/white"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvSkip"/>
+
+    <TextView
+       style="@style/StyleMedium"
+        android:id="@+id/tvSkip"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:paddingVertical="@dimen/fragment_small_margin"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:text="@string/st_skip"/>
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

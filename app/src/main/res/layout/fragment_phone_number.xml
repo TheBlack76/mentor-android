@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/tvHeader"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:text="@string/st_enter_phone_number"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        style="@style/StyleMedium"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"
+        android:text="@string/st_phone_number"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="@+id/tvHeader"
+        app:layout_constraintStart_toStartOf="@+id/tvHeader"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+    <View
+        android:id="@+id/ivNumberView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_edittext_height"
+        android:layout_marginTop="@dimen/fragment_item_margin"
+        android:background="@drawable/drawable_input_edittext_normal"
+        app:layout_constraintEnd_toEndOf="@+id/tvPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/tvPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber" />
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/tvCountryCode"
+        style="@style/StyleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/default_edittext_height"
+        android:layout_marginStart="@dimen/fragment_item_margin"
+        android:focusable="false"
+        android:gravity="center"
+        app:ccpDialog_allowSearch="true"
+        app:ccpDialog_backgroundColor="@color/white"
+        app:ccpDialog_textColor="@color/colorPrimaryText"
+        app:ccp_contentColor="@color/colorPrimaryText"
+        app:ccp_defaultNameCode="us"
+        app:ccp_showArrow="false"
+        app:ccp_showFlag="true"
+        app:ccp_showNameCode="false"
+        app:ccp_showPhoneCode="true"
+        app:ccp_textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivNumberView"
+        app:layout_constraintStart_toStartOf="@+id/ivNumberView"
+        app:layout_constraintTop_toTopOf="@id/ivNumberView" />
+
+    <ImageView
+        android:id="@+id/ivCodeArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_down_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCountryCode"
+        app:layout_constraintStart_toEndOf="@+id/tvCountryCode"
+        app:layout_constraintTop_toTopOf="@+id/tvCountryCode" />
+
+    <View
+        android:id="@+id/viewNumber"
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/fragment_default_margin"
+        android:layout_marginStart="@dimen/fragment_item_margin"
+        android:background="@color/colorEditTextStroke"
+        app:layout_constraintBottom_toBottomOf="@id/ivNumberView"
+        app:layout_constraintStart_toEndOf="@id/ivCodeArrow"
+        app:layout_constraintTop_toTopOf="@id/ivNumberView" />
+
+    <EditText
+        android:id="@+id/etNumber"
+        style="@style/StyleInputEditText"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginEnd="@dimen/fragment_small_margin"
+        android:background="@color/transparent"
+        android:hint="870 987 9087"
+        android:inputType="number"
+        android:maxLength="15"
+        android:imeOptions="actionDone"
+        app:layout_constraintBottom_toBottomOf="@id/ivNumberView"
+        app:layout_constraintEnd_toEndOf="@id/ivNumberView"
+        app:layout_constraintStart_toEndOf="@id/viewNumber"
+        app:layout_constraintTop_toTopOf="@id/ivNumberView" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="0dp"
+        style="@style/StyleSubmitButton"
+        android:text="@string/st_continue"
+        android:textColor="@color/white"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

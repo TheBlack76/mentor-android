@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/fragment_small_margin">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdvServiceImage"
+                android:layout_width="142dp"
+                android:layout_height="84dp"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholderImage="@color/colorPlaceHolder"
+                app:roundedCornerRadius="@dimen/rounded_corner_radius" />
+
+            <TextView
+                android:id="@+id/tvProfessionName"
+                style="@style/StyleBold"
+                android:layout_marginStart="@dimen/fragment_medium_margin"
+                android:text="@string/st_service_duration"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintBottom_toTopOf="@+id/tvSubProfessionName"
+                app:layout_constraintStart_toEndOf="@+id/sdvServiceImage"
+                app:layout_constraintTop_toTopOf="@+id/sdvServiceImage"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tvSubProfessionName"
+                style="@style/StyleRegular"
+                android:layout_marginStart="@dimen/fragment_medium_margin"
+                android:layout_marginTop="@dimen/fragment_small_margin"
+                android:text="@string/st_service_duration"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintBottom_toBottomOf="@+id/sdvServiceImage"
+                app:layout_constraintStart_toEndOf="@+id/sdvServiceImage"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfessionName" />
+
+
+            <TextView
+                android:id="@+id/tvServiceDuration"
+                style="@style/StyleSemiBold"
+                android:layout_marginTop="@dimen/fragment_headline_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:text="@string/st_service_duration"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sdvServiceImage" />
+
+            <TextView
+                android:id="@+id/tv30Min"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/fragment_medium_margin"
+                android:layout_marginEnd="@dimen/fragment_small_margin"
+                android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+                android:gravity="center"
+                android:paddingVertical="@dimen/body_margin"
+                android:text="30 Min"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/tv60Min"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvServiceDuration" />
+
+            <TextView
+                android:id="@+id/tv60Min"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/fragment_small_margin"
+                android:layout_marginTop="@dimen/body_margin"
+                android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+                android:backgroundTint="@color/colorPrimaryPeach"
+                android:gravity="center"
+                android:paddingVertical="@dimen/body_margin"
+                android:text="60 Min"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/tv90Min"
+                app:layout_constraintStart_toEndOf="@+id/tv30Min"
+                app:layout_constraintTop_toBottomOf="@+id/tvServiceDuration" />
+
+            <TextView
+                android:id="@+id/tv90Min"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/fragment_small_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:background="@drawable/drawable_color_medium_rounded_corners_solid"
+                android:backgroundTint="@color/colorPrimaryPeach"
+                android:gravity="center"
+                android:paddingVertical="@dimen/body_margin"
+                android:text="90 Min"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv60Min"
+                app:layout_constraintTop_toTopOf="@+id/tv30Min" />
+
+
+            <TextView
+                android:id="@+id/tvRecommended"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@drawable/drawable_dotted_round"
+                android:paddingHorizontal="@dimen/fragment_default_margin"
+                android:paddingVertical="@dimen/fragment_medium_margin"
+                android:visibility="gone"
+                android:text="Recommended fare: $100"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/tv90Min"
+                app:layout_constraintStart_toStartOf="@id/tv30Min"
+                app:layout_constraintTop_toBottomOf="@+id/tv30Min" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/st_offer_fare"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/tv90Min"
+                app:layout_constraintStart_toStartOf="@+id/tv30Min"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecommended" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPrice"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:inputType="numberDecimal"
+                android:hint="@string/st_enter_the_amount_you_re_willing_to_pay"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFareTagline"
+                style="@style/StyleRegular"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_small_margin"
+                android:text="@string/st_you_can_change_recommended_fare"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="@color/colorDisabledText"
+                app:layout_constraintEnd_toEndOf="@+id/tv90Min"
+                app:layout_constraintStart_toStartOf="@+id/tv30Min"
+                app:layout_constraintTop_toBottomOf="@+id/etPrice" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etComments"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="top"
+                android:hint="@string/st_describe_your_issue"
+                android:lines="4"
+                android:singleLine="false"
+                app:layout_constraintEnd_toEndOf="@+id/tvName"
+                app:layout_constraintStart_toStartOf="@+id/tvName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFareTagline" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/st_request_service"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/viewNoWorker"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:clickable="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/tvNoData"
+        style="@style/StyleTextViewNoData"
+        android:drawablePadding="@dimen/fragment_default_margin"
+        android:gravity="center"
+        android:text="@string/st_no_worker_for_this_category"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/ic_no_data_found"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

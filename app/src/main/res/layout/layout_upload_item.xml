@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="@dimen/fragment_item_margin">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:src="@drawable/ic_upload_file"
+        android:scaleType="centerInside"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:background="@drawable/drawable_dotted_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+       style="@style/StyleRegular"
+        android:id="@+id/tvName"
+        app:layout_constraintTop_toBottomOf="@+id/ivImage"
+        app:layout_constraintStart_toStartOf="@+id/ivImage"
+        android:textSize="@dimen/small_text_size"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        android:text="@string/st_upload_file"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

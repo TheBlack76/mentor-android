@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mentor.application.views.comman.utils.SlidingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/appBarLayout"
+        layout="@layout/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSkip"
+        style="@style/StyleMedium"
+        android:layout_marginEnd="@dimen/fragment_default_margin"
+        android:padding="@dimen/line_spacing_extra"
+        android:text="Skip"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintBottom_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintEnd_toEndOf="@+id/appBarLayout"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/fragment_medium_margin"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/StyleBold"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/st_enter_details"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTagline"
+                style="@style/StyleRegular"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:text="@string/st_fill_in_the_information_below_to_continue"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/tvHeader"
+                app:layout_constraintStart_toStartOf="@+id/tvHeader"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfession"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/fragment_menu_item_margin"
+                android:text="@string/st_select_your_profession"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTagline" />
+
+            <TextView
+                android:id="@+id/spnrProfession"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:background="@drawable/drawable_spinner"
+                android:gravity="center_vertical"
+                android:hint="@string/st_select_your_profession"
+                app:layout_constraintEnd_toEndOf="@+id/tvProfession"
+                app:layout_constraintStart_toStartOf="@+id/tvProfession"
+                app:layout_constraintTop_toBottomOf="@+id/tvProfession" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@+id/spnrProfession"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spnrProfession" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvExperience"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="@string/st_experience"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/spnrProfession"
+                app:layout_constraintStart_toStartOf="@+id/spnrProfession"
+                app:layout_constraintTop_toBottomOf="@+id/rvProfession" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etExperience"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:hint="eg: xx months, xx yrs"
+                android:maxLength="12"
+                app:layout_constraintEnd_toEndOf="@+id/tvExperience"
+                app:layout_constraintStart_toStartOf="@+id/tvExperience"
+                app:layout_constraintTop_toBottomOf="@+id/tvExperience" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHalfHourlyPrice"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="30min Rate"
+                android:layout_marginEnd="@dimen/line_spacing_extra"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toStartOf="@id/tvHourlyPrice"
+                app:layout_constraintStart_toStartOf="@+id/spnrProfession"
+                app:layout_constraintTop_toBottomOf="@+id/etExperience" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etHalfHourlyPrice"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:maxLength="12"
+                android:inputType="number"
+                android:imeOptions="actionNext"
+                app:layout_constraintEnd_toEndOf="@+id/tvHalfHourlyPrice"
+                app:layout_constraintStart_toStartOf="@+id/tvHalfHourlyPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvHalfHourlyPrice" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHourlyPrice"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:text="60min Rate"
+                android:layout_marginHorizontal="@dimen/line_spacing_extra"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toStartOf="@id/tvOneHalfHourlyPrice"
+                app:layout_constraintStart_toEndOf="@+id/tvHalfHourlyPrice"
+                app:layout_constraintTop_toTopOf="@+id/tvHalfHourlyPrice" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etHourlyPrice"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:maxLength="12"
+                android:inputType="number"
+                android:imeOptions="actionNext"
+                app:layout_constraintEnd_toEndOf="@+id/tvHourlyPrice"
+                app:layout_constraintStart_toStartOf="@+id/tvHourlyPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvHourlyPrice" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOneHalfHourlyPrice"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:text="90min Rate"
+                android:layout_marginStart="@dimen/line_spacing_extra"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/spnrProfession"
+                app:layout_constraintStart_toEndOf="@+id/tvHourlyPrice"
+                app:layout_constraintTop_toTopOf="@+id/tvHalfHourlyPrice" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etOneHalfHourlyPrice"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:maxLength="12"
+                android:inputType="number"
+                android:imeOptions="actionNext"
+                app:layout_constraintEnd_toEndOf="@+id/tvOneHalfHourlyPrice"
+                app:layout_constraintStart_toStartOf="@+id/tvOneHalfHourlyPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvOneHalfHourlyPrice" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLocation"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="@string/st_your_location"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/etExperience"
+                app:layout_constraintStart_toStartOf="@+id/etExperience"
+                app:layout_constraintTop_toBottomOf="@+id/etOneHalfHourlyPrice" />
+
+            <TextView
+                android:id="@+id/etLocation"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="@+id/tvLocation"
+                app:layout_constraintStart_toStartOf="@+id/tvLocation"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBio"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="@string/st_add_your_bio"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/etLocation"
+                app:layout_constraintStart_toStartOf="@+id/etLocation"
+                app:layout_constraintTop_toBottomOf="@+id/etLocation" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etBio"
+                style="@style/StyleInputEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_item_margin"
+                android:gravity="top"
+                android:lines="4"
+                android:paddingVertical="@dimen/fragment_medium_margin"
+                android:singleLine="false"
+                app:layout_constraintEnd_toEndOf="@+id/tvBio"
+                app:layout_constraintStart_toStartOf="@+id/tvBio"
+                app:layout_constraintTop_toBottomOf="@+id/tvBio" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCertification"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="@string/st_upload_certication_license"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/etBio"
+                app:layout_constraintStart_toStartOf="@+id/etBio"
+                app:layout_constraintTop_toBottomOf="@+id/etBio" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/body_margin"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/small_spacing"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvCertification" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPastWork"
+                style="@style/StyleMedium"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/fragment_default_margin"
+                android:text="@string/st_upload_past_work"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorPrimaryText"
+                app:layout_constraintEnd_toEndOf="@+id/etBio"
+                app:layout_constraintStart_toStartOf="@+id/etBio"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPastWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/body_margin"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/activity_horizontal_margin"
+                android:paddingEnd="@dimen/small_spacing"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tvPastWork" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/st_continue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</com.mentor.application.views.comman.utils.SlidingConstraintLayout>

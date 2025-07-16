@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/actionHome"
+        android:title="@string/st_home"
+        android:icon="@drawable/ic_home_active_tab"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/actionMyBooking"
+        android:title="@string/st_my_bookings"
+        android:icon="@drawable/ic_calender_inactive_tab" />
+
+    <item
+        android:id="@+id/actionProfile"
+        android:title="@string/st_profile"
+        android:icon="@drawable/ic_profile_inactive_tab"/>
+
+
+</menu>

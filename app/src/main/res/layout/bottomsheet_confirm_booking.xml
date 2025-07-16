@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_top_round_corners"
+    android:backgroundTint="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:clipToPadding="false">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvConfirmBooking"
+        style="@style/StyleMedium"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="@string/st_booking_confirmation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_close_white"
+        android:tint="@color/colorPrimaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/tvConfirmBooking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmBooking" />
+
+    <View
+        android:id="@+id/viewBg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:background="@drawable/drawable_color_white_rounded_corners_solid"
+        android:backgroundTint="@color/colorPrimaryPeach"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalPriceLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCategory"
+        style="@style/StyleBold"
+        android:layout_width="0dp"
+        android:text="@string/st_network_setup_repair"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        app:layout_constraintEnd_toEndOf="@+id/viewBg"
+        android:layout_marginHorizontal="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/fragment_menu_item_margin"
+        app:layout_constraintTop_toBottomOf="@+id/ivCancel"
+        android:paddingTop="@dimen/fragment_medium_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSubCategory"
+        style="@style/StyleRegular"
+        android:text="@string/st_video_consultation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/line_spacing_extra"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategory"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDateLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubCategory"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        style="@style/StyleRegular"
+        android:text="13 September, 2024"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvDateLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDateLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTimeLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/fragment_medium_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        style="@style/StyleRegular"
+        android:text="09:30am"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvTimeLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTimeLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPriceLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_price"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/fragment_medium_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPrice"
+        style="@style/StyleRegular"
+        android:text="$50/hr"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvPriceLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPriceLabel"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTotalPriceLabel"
+        style="@style/StyleRegular"
+        android:text="@string/st_total_price"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorEditTextStroke"
+        app:layout_constraintStart_toStartOf="@+id/viewBg"
+        android:layout_marginStart="@dimen/fragment_medium_margin"
+        android:layout_marginTop="@dimen/fragment_medium_margin"
+        app:layout_constraintTop_toBottomOf="@+id/tvPriceLabel"
+        android:paddingBottom="@dimen/fragment_medium_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTotalPrice"
+        style="@style/StyleRegular"
+        android:text="$70/hr"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorPrimaryText"
+        android:paddingBottom="@dimen/fragment_medium_margin"
+        app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalPriceLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalPriceLabel"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        style="@style/StyleSubmitButton"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/fragment_vertical_margin"
+        android:layout_marginBottom="@dimen/header_margin"
+        android:text="@string/st_confirm_booking"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewBg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

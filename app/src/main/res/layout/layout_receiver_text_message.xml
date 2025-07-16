@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/timeHeader"
+        layout="@layout/layout_time_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fragment_default_margin"
+        android:layout_marginEnd="@dimen/fragment_double_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        app:layout_constraintTop_toBottomOf="@+id/timeHeader">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/drawable_receiver_message"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSenderMsg"
+            app:layout_constraintEnd_toEndOf="@+id/tvSenderMsg"
+            app:layout_constraintStart_toStartOf="@+id/tvSenderMsg"
+            app:layout_constraintTop_toTopOf="@+id/tvSenderMsg" />
+
+        <TextView
+            android:id="@+id/tvSenderMsg"
+            style="@style/StyleRegular"
+            android:layout_width="wrap_content"
+            android:minWidth="84dp"
+            android:paddingHorizontal="@dimen/fragment_default_margin"
+            android:paddingVertical="@dimen/body_margin"
+            android:text="Hello, How are you? May i ask you something about the job?"
+            android:gravity="start"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorPrimaryText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/StyleRegular"
+            android:layout_width="wrap_content"
+            android:text="10:13"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/line_spacing_extra"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/colorEditTextStroke"
+            app:layout_constraintEnd_toEndOf="@+id/tvSenderMsg"
+            app:layout_constraintTop_toBottomOf="@+id/tvSenderMsg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
