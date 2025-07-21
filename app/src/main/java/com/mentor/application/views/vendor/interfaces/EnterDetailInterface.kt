@@ -11,7 +11,6 @@ interface EnterDetailInterface {
     fun onAddWorkClick()
     fun onDocumentClick(file:String)
     fun onWorkClick(file:String)
-    fun onRemoveProfession(absoluteAdapterPosition: Int)
     fun onDeletePastWork(absoluteAdapterPosition: Int)
     fun onDeleteCertificate(absoluteAdapterPosition: Int)
 

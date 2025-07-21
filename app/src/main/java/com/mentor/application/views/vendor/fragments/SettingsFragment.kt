@@ -96,7 +96,7 @@ class SettingsFragment :
             }
         }
 
-        val errorColor = R.color.colorRed
+        val errorColor = R.color.colorDisabledText
         val normalColor = R.color.colorPrimaryText
 
         // Check and update each TextView

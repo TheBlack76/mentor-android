@@ -2,6 +2,7 @@ package com.mentor.application.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
@@ -286,6 +287,10 @@ object GeneralFunctions {
             .transition(DrawableTransitionOptions.withCrossFade())
             .centerCrop()
             .into(image)
+    }
+
+    fun dpToPx(dp: Int): Int {
+        return (dp * Resources.getSystem().displayMetrics.density).toInt()
     }
 
     internal fun getAddress(mLatitide: Double, mLongitude: Double, context: Context): String {

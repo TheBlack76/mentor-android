@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white">
 
-    <CheckBox
+    <TextView
         android:id="@+id/checkbox"
+        style="@style/StyleMedium"
+        android:layout_width="match_parent"
+        android:buttonTint="@color/colorPrimary"
+        android:paddingVertical="@dimen/fragment_medium_margin"
+        android:text="Attribute Value"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="@color/black"
+        app:drawableEndCompat="@drawable/ic_down_arrow"
+        app:drawableTint="@color/colorPrimaryText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Attribute Value"
-        android:buttonTint="@color/colorPrimary"
-        android:padding="@dimen/fragment_small_margin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

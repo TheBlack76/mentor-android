@@ -2,10 +2,18 @@ package com.sportex.app.appCricket.views.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.flexbox.AlignItems
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
+import com.mentor.application.R
 import com.mentor.application.databinding.LayoutProfessionSelcetItemBinding
 import com.mentor.application.repository.models.Profession
+import com.mentor.application.views.vendor.adapters.ProfessionSubCategoryAdapter
 import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Inject
@@ -17,7 +25,6 @@ class ProfessionCheckListAdapter @Inject constructor(
 
 
     private var mList = mutableListOf<Profession>()
-    private var mSelectedItem = mutableListOf<Profession>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -34,17 +41,19 @@ class ProfessionCheckListAdapter @Inject constructor(
         return mList.size
     }
 
-    fun updateData(list: List<Profession>, selectedList: List<Profession>) {
+    fun updateData(list: List<Profession>) {
         mList.clear()
-        mSelectedItem.clear()
-        mSelectedItem.addAll(selectedList)
         mList.addAll(list)
-        notifyDataSetChanged()
 
+        mList.forEach { profession ->
+            profession.isOpen = profession.subProfessions?.any { it.isChecked } == true
+        }
+
+        notifyDataSetChanged()
     }
 
     fun getSelectedList(): List<Profession> {
-        return mSelectedItem
+        return mList
     }
 
 
@@ -58,17 +67,44 @@ class ProfessionCheckListAdapter @Inject constructor(
             position: Int
         ) {
 
-            binding.checkbox.text=mList[absoluteAdapterPosition].profession
+            binding.checkbox.text = mList[absoluteAdapterPosition].profession
 
-            binding.checkbox.isChecked = mSelectedItem.contains(mList[absoluteAdapterPosition])
+            val adapter = ProfessionSubCategoryAdapter(
+                mContext!!,
+                mList[absoluteAdapterPosition].subProfessions!!,
+                true
+            )
+            val layoutManager = FlexboxLayoutManager(mContext)
+            layoutManager.flexDirection = FlexDirection.ROW
+            layoutManager.justifyContent = JustifyContent.FLEX_START
+            layoutManager.alignItems = AlignItems.CENTER
+            binding.rvList.setLayoutManager(layoutManager)
+            binding.rvList.adapter = adapter
+
+            if (mList[absoluteAdapterPosition].isOpen) {
+                binding.rvList.visibility = View.VISIBLE
+                binding.checkbox.setCompoundDrawablesWithIntrinsicBounds(
+                    0,
+                    0,
+                    R.drawable.ic_upword_arrow,
+                    0
+                );
+
+            } else {
+                binding.rvList.visibility = View.GONE
+                binding.checkbox.setCompoundDrawablesWithIntrinsicBounds(
+                    0,
+                    0,
+                    R.drawable.ic_down_arrow,
+                    0
+                );
+            }
+
 
             // Set check listener
             binding.checkbox.setOnClickListener {
-                if (binding.checkbox.isChecked) {
-                    mSelectedItem.add(mList[position])
-                } else {
-                    mSelectedItem.remove(mList[position])
-                }
+                mList[absoluteAdapterPosition].isOpen = !mList[absoluteAdapterPosition].isOpen
+                notifyItemChanged(absoluteAdapterPosition)
             }
 
         }

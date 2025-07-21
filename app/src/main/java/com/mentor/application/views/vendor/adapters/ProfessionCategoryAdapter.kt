@@ -22,7 +22,7 @@ class ProfessionCategoryAdapter @Inject constructor(
     var mListener: EnterDetailInterface
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var mList= mutableListOf<Profession>()
+    private var mList = mutableListOf<Profession>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListViewHolder(
@@ -38,9 +38,14 @@ class ProfessionCategoryAdapter @Inject constructor(
         return mList.size
     }
 
-    fun updateData(list:List<Profession>){
+    fun updateData(list: List<Profession>) {
         mList.clear()
-        mList.addAll(list)
+        val filteredProfessionList = list.map { profession ->
+            profession.copy(
+                subProfessions = profession.subProfessions?.filter { it.isChecked }
+            )
+        }
+        mList.addAll(filteredProfessionList)
         notifyDataSetChanged()
     }
 
@@ -56,19 +61,19 @@ class ProfessionCategoryAdapter @Inject constructor(
             position: Int
         ) {
 
-            binding.tvName.text=mList[absoluteAdapterPosition].profession
+            binding.tvName.text = mList[absoluteAdapterPosition].profession
 
-            binding.ivCancel.setOnClickListener {
-                mListener.onRemoveProfession(absoluteAdapterPosition)
-            }
-
-            val adapter=ProfessionSubCategoryAdapter(mContext!!,mList[absoluteAdapterPosition].subProfessions!!)
+            val adapter = ProfessionSubCategoryAdapter(
+                mContext!!,
+                mList[absoluteAdapterPosition].subProfessions!!,
+                false
+            )
             val layoutManager = FlexboxLayoutManager(mContext)
             layoutManager.flexDirection = FlexDirection.ROW
             layoutManager.justifyContent = JustifyContent.FLEX_START
             layoutManager.alignItems = AlignItems.CENTER
             binding.recyclerView.setLayoutManager(layoutManager)
-            binding.recyclerView.adapter=adapter
+            binding.recyclerView.adapter = adapter
 
         }
     }

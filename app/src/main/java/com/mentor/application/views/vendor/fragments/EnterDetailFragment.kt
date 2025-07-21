@@ -21,6 +21,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.anilokcun.uwmediapicker.UwMediaPicker
 import com.anilokcun.uwmediapicker.model.UwMediaPickerMediaModel
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.mentor.application.R
 import com.mentor.application.databinding.BottomsheetProfessionSelectBinding
@@ -208,7 +209,6 @@ class EnterDetailFragment :
             }
 
             R.id.spnrProfession -> {
-
                 showMultiChoiceDialog(
                     getString(R.string.st_select_your_profession),
                     mProfessionList,
@@ -241,11 +241,6 @@ class EnterDetailFragment :
         val mImageList = ArrayList<String>()
         mImageList.add(file)
         ImagePreviewDialogFragment.newInstance(mImageList, 0).show(childFragmentManager, "")
-    }
-
-    override fun onRemoveProfession(absoluteAdapterPosition: Int) {
-        mSelectedProfession.removeAt(absoluteAdapterPosition)
-        mProfessionCategoryAdapter.updateData(mSelectedProfession)
     }
 
     override fun onDeletePastWork(absoluteAdapterPosition: Int) {
@@ -310,18 +305,39 @@ class EnterDetailFragment :
 
         // Update adapter
         view.recyclerView.adapter = mProfessionCheckListAdapter
-        mProfessionCheckListAdapter.updateData(items, selectedItems)
+        mProfessionCheckListAdapter.updateData(items)
 
         view.btnApply.setOnClickListener {
-            onSelectionDone(mProfessionCheckListAdapter.getSelectedList())
+            val filteredProfessionList =
+                mProfessionCheckListAdapter.getSelectedList().mapNotNull { profession ->
+                    val selectedSubs = profession.subProfessions?.filter { it.isChecked }
+                    if (!selectedSubs.isNullOrEmpty()) {
+                        profession.copy(subProfessions = selectedSubs)
+                    } else {
+                        null // Remove professions with no selected subProfessions
+                    }
+                }
+
+            onSelectionDone(filteredProfessionList)
             bottomSheetDialog.dismiss()
         }
+
 
         view.btnReset.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
 
         bottomSheetDialog.setContentView(view.root)
+        // Force bottom sheet to open fully expanded
+        view.root.post {
+            val bottomSheet =
+                bottomSheetDialog.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.let {
+                val behavior = BottomSheetBehavior.from(it)
+                behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                behavior.skipCollapsed = true // Optional: Prevents going to half state
+            }
+        }
         bottomSheetDialog.show()
     }
 
@@ -406,10 +422,10 @@ class EnterDetailFragment :
         super.onResume()
         // Initialize receiver
         requireContext().registerReceiver(
-                mGetUpdateDataBroadcastReceiver,
-                IntentFilter(INTENT_ENTER_DETAIL),
-                Context.RECEIVER_EXPORTED
-            )
+            mGetUpdateDataBroadcastReceiver,
+            IntentFilter(INTENT_ENTER_DETAIL),
+            Context.RECEIVER_EXPORTED
+        )
     }
 
     private val mGetUpdateDataBroadcastReceiver = object : BroadcastReceiver() {
@@ -463,7 +479,6 @@ class EnterDetailFragment :
             }
         }
     }
-
 
 
 }

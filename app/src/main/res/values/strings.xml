@@ -223,7 +223,7 @@
     <string name="st_cancel">Cancel</string>
     <string name="st_add">Add</string>
     <string name="empty_profession">Please add your profession</string>
-    <string name="empty_sub_profession">Please select at least one sub profession for each selected profession.</string>
+    <string name="empty_sub_profession">Please select at least one sub-profession from the profession list.</string>
     <string name="empty_experience">Please enter valid experience (e.g., xx yrs, xx months, xx days)</string>
     <string name="empty_rate">Please add prices for each available duration</string>
     <string name="empty_bio">Please enter your bio</string>
@@ -351,6 +351,12 @@
     <string name="st_enter_the_amount_you_re_willing_to_pay">Enter the amount you\'re willing to pay</string>
     <string name="st_user_review">User Review</string>
     <string name="valid_rate">Price must be greater than 0 for all durations.</string>
+    <string name="st_incomplete_tagline">Complete All Setup Steps to Start Accepting Bookings</string>
+    <string name="st_add_profile_info">Add profile info</string>
+    <string name="st_select_subcategories">Select subcategories</string>
+    <string name="st_enter_rates">Enter rates</string>
+    <string name="st_set_availability">Set availability</string>
+    <string name="st_add_bank_info">Add bank info</string>
 
     <!-- Week Belief Array -->
     <string-array name="week_days">

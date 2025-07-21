@@ -22,6 +22,7 @@ data class Profession(
     val createdAt: String = "",
     val isDeleted: Boolean = false,
     val profession: String = "",
+    var isOpen: Boolean = false,
     val subProfessions: List<SubProfession>? = mutableListOf(),
     val updatedAt: String = ""
 ) : Parcelable

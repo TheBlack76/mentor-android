@@ -102,16 +102,8 @@ class PersonalisationViewModel @Inject constructor(
         oneHalfHourlyPrice: String,
     ) {
 
-        var isNotValid = false
-        mSelectedProfession.forEach { profession ->
-            if (profession.subProfessions?.any { it.isChecked } != true) {
-                isNotValid = true
-            }
-        }
-
         when {
-            mSelectedProfession.isEmpty() -> errorHandler.value = ErrorHandler.EMPTY_PROFESSION
-            isNotValid -> errorHandler.value = ErrorHandler.EMPTY_SUB_PROFESSION
+            mSelectedProfession.isEmpty() -> errorHandler.value = ErrorHandler.EMPTY_SUB_PROFESSION
             !GeneralFunctions.isValidExperience(experience) -> errorHandler.value = ErrorHandler.EMPTY_EXPERIENCE
             halfHourlyPrice.isBlank() || hourlyPrice.isBlank() || oneHalfHourlyPrice.isBlank() -> errorHandler.value =
                 ErrorHandler.EMPTY_RATE

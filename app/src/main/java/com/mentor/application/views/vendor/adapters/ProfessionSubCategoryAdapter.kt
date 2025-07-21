@@ -16,7 +16,8 @@ import javax.inject.Inject
 @FragmentScoped
 class ProfessionSubCategoryAdapter @Inject constructor(
     @ActivityContext val mContext: Context?,
-    val mList:List<SubProfession>
+    val mList: List<SubProfession>,
+    val isEdit: Boolean
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
@@ -46,25 +47,33 @@ class ProfessionSubCategoryAdapter @Inject constructor(
             position: Int
         ) {
 
-            binding.btnName.text=mList[absoluteAdapterPosition].subProfession
+            binding.btnName.text = mList[absoluteAdapterPosition].subProfession
 
-            if (mList[absoluteAdapterPosition].isChecked){
+            if (mList[absoluteAdapterPosition].isChecked) {
                 binding.btnName.backgroundTintList = ContextCompat.getColorStateList(
                     mContext!!,
                     R.color.colorPrimary
                 )
-                binding.btnName.setTextColor(ContextCompat.getColor(mContext,R.color.colorWhite))
-            }else{
+                binding.btnName.setTextColor(ContextCompat.getColor(mContext, R.color.colorWhite))
+            } else {
                 binding.btnName.backgroundTintList = ContextCompat.getColorStateList(
                     mContext!!,
-                    R.color.colorPrimaryPeach
+                    R.color.colorWhite
                 )
-                binding.btnName.setTextColor(ContextCompat.getColor(mContext,R.color.colorPrimaryText))
+                binding.btnName.setTextColor(
+                    ContextCompat.getColor(
+                        mContext,
+                        R.color.colorPrimaryText
+                    )
+                )
             }
 
-            binding.btnName.setOnClickListener {
-                mList[absoluteAdapterPosition].isChecked = !mList[absoluteAdapterPosition].isChecked
-                notifyItemChanged(absoluteAdapterPosition)
+            if (isEdit) {
+                binding.btnName.setOnClickListener {
+                    mList[absoluteAdapterPosition].isChecked =
+                        !mList[absoluteAdapterPosition].isChecked
+                    notifyDataSetChanged()
+                }
             }
 
 
