@@ -165,7 +165,6 @@ class InstantBookingProcessDialogFragment :
                 (activity as BaseAppCompactActivity<*>).onBackPressedDispatcher.onBackPressed()
             }
         }
-
     }
 
     private fun bookingVisible() {
